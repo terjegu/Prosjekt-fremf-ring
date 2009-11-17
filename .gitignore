@@ -13,4 +13,6 @@
 *.nlo
 *.nls
 *.toc
+*.nav
+*.snm
 *.synctex*
