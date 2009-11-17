@@ -1,0 +1,60 @@
+\section{Teori} % (fold)
+
+\subsection{Transformasjonsfunksjon} % (fold)
+\begin{frame}{Transformasjon} % (fold)
+
+\only<1>{
+\begin{figure}[htbp]
+  \centering
+   \begin{tabular}[h]{c}
+\xymatrix{ 
+\mathbf{X} \ar[rr] & \ar[d]\ar[r] &*+<5mm>[F-,]{1-A(z)}\ar[rr]^{\mathbf{e}}& &*+<5mm>[F-,]{\frac{1}{1-\tilde{A}(z)}} \ar[r] & \mathbf{Y}\\ % end line 1
+  &*+<5mm>[F-,]{\txt{LPC}} \ar `[rrru]^<(0.15){A(z)}[urrr]&\ar[u]&&}
+  \end{tabular}
+\end{figure}
+}
+\only<2>{
+\begin{figure}[htbp]
+  \centering
+   \begin{tabular}[h]{c}
+\xymatrix{ 
+\mathbf{X} \ar[rr] & \ar[d]\ar[r] &*+<5mm>[F-,]{1-A(z)}\ar[rr]^{\mathbf{e}}& &*+<5mm>[F-,]{\frac{1}{1-\tilde{A}(z)}} \ar[r] & \mathbf{Y}\\ % end line 1
+  &*+<5mm>[F-,]{\txt{LPC}} \ar[rr]^<(0.25){A(z)} & \ar[u]&*+<5mm>[F-,]{\txt{FM}}\ar `[ru]^<(0.5){\tilde{A}(z)} [ur]&&}
+  \end{tabular}
+\end{figure}
+}
+\end{frame} % frame Transformasjon (end)
+% subsection Transformasjonsfunksjon (end)
+
+\subsection{Trening} % (fold)
+\begin{frame}{Gaussisk Blandings Modell} % (fold)
+	\begin{equation}
+		p(\mathbf{x}) = \sum_{i=1}^{m} \alpha_i N(\mathbf{x}; \boldsymbol{\mu}_i, \boldsymbol{\Sigma}_i)
+	\end{equation}
+	
+	\begin{equation}
+		N(\mathbf{x};\boldsymbol{\mu},\mathbf{\Sigma}) = \frac{1}{\sqrt{(2\pi)^{p}\abs{\mathbf{\Sigma}}}} \exp \left[ -\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu})^T \mathbf{\Sigma}^{-1}(\mathbf{x} -\boldsymbol{\mu}) \right]
+	\end{equation}
+\end{frame} % frame Gaussisk blandings modell (end)
+% subsection Trening (end)
+
+\subsection{Konvertering} % (fold)
+\begin{frame}{Konverteringsfunksjon} % (fold)
+	\only<1>{
+	\begin{equation}
+		\mathcal{F}(\mathbf{x}_t) = \sum_{i=1}^{m}P(C_i \vert \mathbf{x}_t)\boldsymbol{\mu}_i^y
+	\end{equation}
+	}
+	\only<2>{
+	\begin{equation}
+		\begin{split}
+		\mathcal{F}(\mathbf{x}_t) =& E[\mathbf{y}\vert \mathbf{x}_t]\\
+		 =& \sum_{i=1}^{m}P(C_i \vert \mathbf{x}_t)[\boldsymbol{\mu}_i^y + \boldsymbol{\Sigma}_i^{yx} \boldsymbol{\Sigma}_i^{xx^{-1}} (\mathbf{x}_t-\boldsymbol{\mu}_i^x)]
+		\end{split}
+	\end{equation}
+	}
+\end{frame} % frame Konverteringsfunksjonen (end)
+% subsection Konvertering (end)
+
+
+% section Teori (end)

@@ -1,0 +1,76 @@
+\documentclass[norsk,mathserif]{beamer}
+
+\mode<presentation>
+{
+	% \usetheme{Singapore}
+	\usetheme{CambridgeUS}	
+	\usecolortheme{seahorse}
+	\usefonttheme{serif}
+	% \useinnertheme{rounded}
+	% \useoutertheme{sidebar}
+	% \setbeamercovered{transparent}
+	% \setbeamercolor{<beamer-color name>}{<options>}
+	% \setbeamerfont{<beamer-font name>}{<options>}
+}
+\usepackage[utf8]{inputenc} 
+\usepackage{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{multimedia}
+\usepackage{amsmath,amssymb,amsfonts,amsthm} 
+\usepackage{subfigure}
+\usepackage[matrix]{xypic}
+% \usepackage{times}
+% \usepackage[T1]{fontenc}
+
+\theoremstyle{plain} 
+\newtheorem{thm}{Theorem}[section] 
+
+\theoremstyle{definition} 
+\newtheorem{defn}[thm]{Definisjon}
+
+\providecommand{\abs}[1]{\lvert#1\rvert} 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\title[Taletransformasjon]{Implementasjon av Taletransformasjon med Gausiske Blandings Modeller}
+
+
+\author{Terje Gundersen}
+\institute[Universities of Somewhere and Elsewhere] % (optional, but mostly needed)
+{
+  Institutt for Elektronikk og Telekommunikasjon\\
+  Norges Teknisk-Naturvitenskapelige Universitet
+}
+
+\date{\today}
+
+\subject{Fremføring av fordypningsprosjekt}
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{fig/logo.pdf}
+% \logo{\pgfuseimage{university-logo}}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+	
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+\input{tex/innledning.tex}
+\input{tex/teori.tex}
+\input{tex/resultater.tex}
+\input{tex/sammendrag.tex}
+
+\end{document}
+
+

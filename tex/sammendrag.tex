@@ -1,0 +1,56 @@
+\section{Oppsumering}
+
+\begin{frame}{Konklusjon}
+  \begin{itemize}
+  \item
+    Taletransformasjon fungerer med bare 3 minutter treningsdata.
+  \item
+	Kan ikke transformere til hva som helst
+  \end{itemize}
+  
+  % \vskip0pt plus.5fill
+
+\end{frame}
+
+\subsection{Videre arbeid} % (fold)
+\label{sub:videre_arbeid}
+\begin{frame}{Parameter estimering uten måldata} % (fold)
+	\begin{equation}
+		\mathcal{F}(\mathbf{x}_t) = \sum_{i=1}^{m}P(C_i \vert \mathbf{x}_t)[\boldsymbol{\mu}_i^y + \boldsymbol{\Sigma}_i^{yx} \boldsymbol{\Sigma}_i^{xx^{-1}} (\mathbf{x}_t-\boldsymbol{\mu}_i^x)]
+	\end{equation}
+	
+	\only<1>{
+	\begin{equation}
+		 \text{MSE} = \sum_{t} \norm{\mathbf{y}_t - \mathcal{F}(\mathbf{x}_t)}^2.
+	\end{equation}
+	}
+	\only<2>{
+	\begin{equation}
+		 \text{ML} = \arg\max (\cdot)
+	\end{equation}
+	}
+\end{frame} % frame Trening uten måldata (end)
+
+\begin{frame}{Transformen} % (fold)
+	\only<1>{
+	\begin{figure}[htbp]
+	  \centering
+	   \begin{tabular}[h]{c}
+	\xymatrix{ 
+	\mathbf{x} \ar[rr] & \ar[d]\ar[r] &*+<5mm>[F-,]{1-A(z)}\ar[rr]^{\mathbf{e}}& &*+<5mm>[F-,]{\frac{1}{1-\tilde{A}(z)}} \ar[r] & \mathbf{y}\\ % end line 1
+	  &*+<5mm>[F-,]{\txt{LPC}} \ar[rr]^<(0.25){A(z)} & \ar[u]&*+<5mm>[F-,]{\txt{FM}}\ar `[ru]^<(0.5){\tilde{A}(z)} [ur]&&}
+	  \end{tabular}
+	\end{figure}
+	}
+	\only<2>{
+	\begin{figure}[htbp]
+	  \centering
+	   \begin{tabular}[h]{c}
+	\xymatrix{ 
+	\mathbf{x} \ar[rr] & \ar[d]\ar[r] &*+<5mm>[F-,]{1-A(z)}\ar[r]^{\mathbf{e}}&*+<5mm>[F-,]{\txt{SM}} \ar[r]^(0.35){\mathbf{\tilde{e}}} &*+<5mm>[F-,]{\frac{1}{1-\tilde{A}(z)}} \ar[r] & \mathbf{y}\\ % end line 1
+	  &*+<5mm>[F-,]{\txt{LPC}} \ar[rr]^<(0.25){A(z)} & \ar[u]&*+<5mm>[F-,]{\txt{FM}}\ar `[ru]^<(0.5){\tilde{A}(z)} [ur]&&}
+	  \end{tabular}
+	\end{figure}
+	}
+\end{frame} % frame Transformen (end)
+% subsection Videre arbeid (end)
